@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		48C613842A64997A00C5BE15 /* GrocerySaverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C613832A64997A00C5BE15 /* GrocerySaverApp.swift */; };
+		48C613882A64997B00C5BE15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48C613872A64997B00C5BE15 /* Assets.xcassets */; };
+		48C6138B2A64997B00C5BE15 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48C6138A2A64997B00C5BE15 /* Preview Assets.xcassets */; };
+		48C613922A6499A300C5BE15 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48C613912A6499A300C5BE15 /* GoogleService-Info.plist */; };
+		48C613952A6499D300C5BE15 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 48C613942A6499D300C5BE15 /* FirebaseAnalytics */; };
+		48C613972A6499D300C5BE15 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 48C613962A6499D300C5BE15 /* FirebaseAuth */; };
+		48C613992A6499D300C5BE15 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 48C613982A6499D300C5BE15 /* FirebaseDatabase */; };
+		48C6139B2A6499D300C5BE15 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 48C6139A2A6499D300C5BE15 /* FirebaseDatabaseSwift */; };
+		48C6139D2A6499D300C5BE15 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 48C6139C2A6499D300C5BE15 /* FirebaseFirestore */; };
+		48C6139F2A6499D300C5BE15 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 48C6139E2A6499D300C5BE15 /* FirebaseFirestoreSwift */; };
+		48C613A12A6499D300C5BE15 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 48C613A02A6499D300C5BE15 /* FirebaseStorage */; };
+		48C613A62A649B1F00C5BE15 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C613A52A649B1F00C5BE15 /* LoginView.swift */; };
+		48C613A82A649F8500C5BE15 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C613A72A649F8400C5BE15 /* LoginViewModel.swift */; };
+		48C613AA2A64A05C00C5BE15 /* StoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C613A92A64A05C00C5BE15 /* StoreListView.swift */; };
+		48C613AC2A64A06500C5BE15 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C613AB2A64A06500C5BE15 /* RegisterView.swift */; };
+		48C613AE2A70522700C5BE15 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C613AD2A70522700C5BE15 /* RegisterViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		48C613802A64997A00C5BE15 /* GrocerySaver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrocerySaver.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48C613832A64997A00C5BE15 /* GrocerySaverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrocerySaverApp.swift; sourceTree = "<group>"; };
+		48C613872A64997B00C5BE15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		48C6138A2A64997B00C5BE15 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		48C613912A6499A300C5BE15 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		48C613A52A649B1F00C5BE15 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		48C613A72A649F8400C5BE15 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		48C613A92A64A05C00C5BE15 /* StoreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListView.swift; sourceTree = "<group>"; };
+		48C613AB2A64A06500C5BE15 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		48C613AD2A70522700C5BE15 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		48C6137D2A64997A00C5BE15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48C6139B2A6499D300C5BE15 /* FirebaseDatabaseSwift in Frameworks */,
+				48C613992A6499D300C5BE15 /* FirebaseDatabase in Frameworks */,
+				48C613952A6499D300C5BE15 /* FirebaseAnalytics in Frameworks */,
+				48C6139D2A6499D300C5BE15 /* FirebaseFirestore in Frameworks */,
+				48C613A12A6499D300C5BE15 /* FirebaseStorage in Frameworks */,
+				48C613972A6499D300C5BE15 /* FirebaseAuth in Frameworks */,
+				48C6139F2A6499D300C5BE15 /* FirebaseFirestoreSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		48C613772A64997A00C5BE15 = {
+			isa = PBXGroup;
+			children = (
+				48C613822A64997A00C5BE15 /* GrocerySaver */,
+				48C613812A64997A00C5BE15 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		48C613812A64997A00C5BE15 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				48C613802A64997A00C5BE15 /* GrocerySaver.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		48C613822A64997A00C5BE15 /* GrocerySaver */ = {
+			isa = PBXGroup;
+			children = (
+				48C613832A64997A00C5BE15 /* GrocerySaverApp.swift */,
+				48C613A42A649A4700C5BE15 /* Models */,
+				48C613A32A649A4000C5BE15 /* ViewModels */,
+				48C613A22A649A3900C5BE15 /* Views */,
+				48C613872A64997B00C5BE15 /* Assets.xcassets */,
+				48C613912A6499A300C5BE15 /* GoogleService-Info.plist */,
+				48C613892A64997B00C5BE15 /* Preview Content */,
+			);
+			path = GrocerySaver;
+			sourceTree = "<group>";
+		};
+		48C613892A64997B00C5BE15 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				48C6138A2A64997B00C5BE15 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		48C613A22A649A3900C5BE15 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48C613A52A649B1F00C5BE15 /* LoginView.swift */,
+				48C613A92A64A05C00C5BE15 /* StoreListView.swift */,
+				48C613AB2A64A06500C5BE15 /* RegisterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		48C613A32A649A4000C5BE15 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				48C613A72A649F8400C5BE15 /* LoginViewModel.swift */,
+				48C613AD2A70522700C5BE15 /* RegisterViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		48C613A42A649A4700C5BE15 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		48C6137F2A64997A00C5BE15 /* GrocerySaver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48C6138E2A64997B00C5BE15 /* Build configuration list for PBXNativeTarget "GrocerySaver" */;
+			buildPhases = (
+				48C6137C2A64997A00C5BE15 /* Sources */,
+				48C6137D2A64997A00C5BE15 /* Frameworks */,
+				48C6137E2A64997A00C5BE15 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GrocerySaver;
+			packageProductDependencies = (
+				48C613942A6499D300C5BE15 /* FirebaseAnalytics */,
+				48C613962A6499D300C5BE15 /* FirebaseAuth */,
+				48C613982A6499D300C5BE15 /* FirebaseDatabase */,
+				48C6139A2A6499D300C5BE15 /* FirebaseDatabaseSwift */,
+				48C6139C2A6499D300C5BE15 /* FirebaseFirestore */,
+				48C6139E2A6499D300C5BE15 /* FirebaseFirestoreSwift */,
+				48C613A02A6499D300C5BE15 /* FirebaseStorage */,
+			);
+			productName = GrocerySaver;
+			productReference = 48C613802A64997A00C5BE15 /* GrocerySaver.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		48C613782A64997A00C5BE15 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					48C6137F2A64997A00C5BE15 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 48C6137B2A64997A00C5BE15 /* Build configuration list for PBXProject "GrocerySaver" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 48C613772A64997A00C5BE15;
+			packageReferences = (
+				48C613932A6499D300C5BE15 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = 48C613812A64997A00C5BE15 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				48C6137F2A64997A00C5BE15 /* GrocerySaver */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		48C6137E2A64997A00C5BE15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48C6138B2A64997B00C5BE15 /* Preview Assets.xcassets in Resources */,
+				48C613882A64997B00C5BE15 /* Assets.xcassets in Resources */,
+				48C613922A6499A300C5BE15 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		48C6137C2A64997A00C5BE15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48C613A82A649F8500C5BE15 /* LoginViewModel.swift in Sources */,
+				48C613AE2A70522700C5BE15 /* RegisterViewModel.swift in Sources */,
+				48C613A62A649B1F00C5BE15 /* LoginView.swift in Sources */,
+				48C613AC2A64A06500C5BE15 /* RegisterView.swift in Sources */,
+				48C613AA2A64A05C00C5BE15 /* StoreListView.swift in Sources */,
+				48C613842A64997A00C5BE15 /* GrocerySaverApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		48C6138C2A64997B00C5BE15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		48C6138D2A64997B00C5BE15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		48C6138F2A64997B00C5BE15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GrocerySaver/Preview Content\"";
+				DEVELOPMENT_TEAM = JF3C4XP9N2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.jacobbrown.GrocerySaver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		48C613902A64997B00C5BE15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GrocerySaver/Preview Content\"";
+				DEVELOPMENT_TEAM = JF3C4XP9N2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.jacobbrown.GrocerySaver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		48C6137B2A64997A00C5BE15 /* Build configuration list for PBXProject "GrocerySaver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48C6138C2A64997B00C5BE15 /* Debug */,
+				48C6138D2A64997B00C5BE15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48C6138E2A64997B00C5BE15 /* Build configuration list for PBXNativeTarget "GrocerySaver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48C6138F2A64997B00C5BE15 /* Debug */,
+				48C613902A64997B00C5BE15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		48C613932A6499D300C5BE15 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		48C613942A6499D300C5BE15 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48C613932A6499D300C5BE15 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		48C613962A6499D300C5BE15 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48C613932A6499D300C5BE15 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		48C613982A6499D300C5BE15 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48C613932A6499D300C5BE15 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		48C6139A2A6499D300C5BE15 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48C613932A6499D300C5BE15 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		48C6139C2A6499D300C5BE15 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48C613932A6499D300C5BE15 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		48C6139E2A6499D300C5BE15 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48C613932A6499D300C5BE15 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		48C613A02A6499D300C5BE15 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48C613932A6499D300C5BE15 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 48C613782A64997A00C5BE15 /* Project object */;
+}
