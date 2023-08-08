@@ -1,8 +1,8 @@
 //
-//  item.swift
+//  Item.swift
 //  GrocerySaver
 //
-//  Created by jacob brown on 7/25/23.
+//  Created by jacob brown on 8/6/23.
 //
 
 import Foundation

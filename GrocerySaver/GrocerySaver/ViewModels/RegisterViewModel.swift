@@ -18,6 +18,7 @@ class RegisterViewModel: ObservableObject {
             errorMsg = "You must set a valid email and password to create a new profile."
             return
         }
+        //add firebase code here
         
         isValid = true
     }

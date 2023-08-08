@@ -2,7 +2,7 @@
 //  Store.swift
 //  GrocerySaver
 //
-//  Created by jacob brown on 7/25/23.
+//  Created by jacob brown on 8/6/23.
 //
 
 import Foundation
@@ -10,9 +10,10 @@ import Foundation
 struct Store: Identifiable {
     let id = UUID()
     let name: String
-    let groceryList: [GroceryList]
+    var items: [Item]
     
-    var size: Int {
-        return groceryList.count
+    //num of items
+    var itemCount: Int {
+        return self.items.count
     }
 }

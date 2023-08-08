@@ -1,85 +1,88 @@
 //
-//  StoreListView.swift
+//  ListView.swift
 //  GrocerySaver
 //
-//  Created by jacob brown on 7/16/23.
+//  Created by jacob brown on 8/6/23.
 //
 
 import SwiftUI
 
 struct StoreListView: View {
-    @ObservedObject private var _vm = StoresViewModel()
+    @ObservedObject private var vm = StoreListViewModel()
     
     var body: some View {
         NavigationStack {
             VStack {
-                List{
-                    ForEach(_vm.stores) { store in
-                        NavigationLink {
-                            // navigate to store specific view here
-                        } label: {
-                            storeTile(store: store)
-                        }
-                    }.onDelete(perform: _vm.deleteStore)
+                List {
+                    Section(header: Text("Stores")) {
+                        ForEach(vm.stores) { store in
+                            NavigationLink {
+                                StoreView(vm: StoreViewModel(store))
+                            } label: {
+                                HStack {
+                                    VStack(alignment: .leading) {
+                                        Text(store.name)
+                                            .font(.title2)
+                                            .bold()
+                                        
+                                        Text("\(store.itemCount) Items")
+                                    }
+                                }
+                            }
+                        }.onDelete(perform: vm.delete)
+                    }
                 }
-            }   .navigationTitle("My Stores")
-                .toolbar {
-                    HStack {
-                        Button {
-                            _vm.showSheet = true
+            } .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Text("Grocery Saver")
+                            .font(.largeTitle)
+                            .bold()
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button{
+                            vm.showingSheet = true
                         } label: {
                             Image(systemName: "plus")
                         }
                     }
                 }
-                .sheet(isPresented: $_vm.showSheet) {
-                    addStore
+                .sheet(isPresented: $vm.showingSheet) {
+                    VStack {
+                        VStack(alignment: .leading) {
+                            Text("Add New Store")
+                                .padding(.top)
+                                .padding(.horizontal)
+                                .font(.title)
+                                .bold()
+                            
+                            TextField("Store Name", text: $vm.newStoreName)
+                                .textFieldStyle(.roundedBorder)
+                                .padding(.horizontal)
+                        }
+                        
+                        Text(vm.addStoreErrorMsg)
+                            .foregroundColor(.red)
+                        
+                        Button {
+                            vm.addStore()
+                        } label: {
+                            Text("Add Store")
+                                .font(.title3)
+                                .foregroundColor(.primary)
+                                .padding(.horizontal, 75)
+                                .padding(.vertical, 15)
+                        }   .background(.green)
+                            .cornerRadius(10)
+                            .padding(.top, 15)
+                        
+                        Spacer()
+                    }
                 }
-        }.navigationBarBackButtonHidden(true)
-    }
-    
-    private func storeTile(store: Store) -> some View {
-        VStack(alignment: .leading) {
-            Text(store.name)
-                .font(.title2)
-                .bold()
-            Text("\(store.size) items")
-        }
-    }
-    
-    private var addStore: some View {
-        VStack {
-            VStack(alignment: .leading) {
-                Text("Add New Store")
-                    .padding(.top, 10)
-                    .padding(.leading, 10)
-                    .font(.title)
-                    .bold()
-                TextField("Store Name", text:$_vm.newStoreName)
-                    .textFieldStyle(.roundedBorder)
-                    .padding(.horizontal, 10)
-            }
-            Text(_vm.sheetErrMsg)
-                .foregroundColor(.red)
-            Button {
-                if _vm.addStore() {
-                    _vm.showSheet = false
-                }
-            } label: {
-                Text("Add Store")
-                    .font(.title3)
-                    .foregroundColor(.primary)
-                    .padding(.horizontal, 75)
-                    .padding(.vertical, 15)
-            }   .background(.green)
-                .cornerRadius(10)
-                .padding(.top, 15)
-            Spacer()
-        }
+        }.navigationBarBackButtonHidden()
     }
 }
 
-struct StoreListView_Previews: PreviewProvider {
+struct ListView_Previews: PreviewProvider {
     static var previews: some View {
         StoreListView()
     }

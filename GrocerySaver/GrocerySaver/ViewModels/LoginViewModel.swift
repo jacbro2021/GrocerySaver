@@ -18,6 +18,7 @@ class LoginViewModel: ObservableObject {
             errorMsg = "Invalid username or password."
             return
         }
+        //add firebase code here
         
         isValid = true
     }
