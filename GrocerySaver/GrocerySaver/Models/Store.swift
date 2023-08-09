@@ -7,13 +7,37 @@
 
 import Foundation
 
+typealias JSONDictionary = [String: Any]
+
 struct Store: Identifiable {
     let id = UUID()
     let name: String
-    var items: [Item]
+    var items: [Item] = []
     
     //num of items
     var itemCount: Int {
         return self.items.count
+    }
+    
+    func toDict() -> [String: Any] {
+        return ["name": self.name]
+    }
+    
+    init(name: String, items: [Item]) {
+        self.name = name
+        self.items = items
+    }
+    
+    init?(_ dictionary: [String: Any]) {
+        guard let name = dictionary["name"] as? String else {
+            return nil
+        }
+        self.name = name
+        
+        let itemsDictionary = dictionary["items"] as? [JSONDictionary]
+        
+        if let dictionary = itemsDictionary {
+            self.items = dictionary.compactMap(Item.init)
+        }
     }
 }

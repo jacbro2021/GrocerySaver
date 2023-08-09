@@ -11,4 +11,25 @@ struct Item: Identifiable {
     let id = UUID()
     let name: String
     let price: Double
+    
+    func toDict() -> [String: Any] {
+        return ["name": self.name]
+    }
+    
+    init(name: String, price: Double) {
+        self.name = name
+        self.price = price
+    }
+    
+    init?(_ dictionary: [String: Any]) {
+        guard let name = dictionary["name"] as? String else {
+            return nil
+        }
+        self.name = name
+        
+        guard let price = dictionary["price"] as? String else {
+            return nil
+        }
+        self.price = Double(price) ?? 0.00
+    }
 }
