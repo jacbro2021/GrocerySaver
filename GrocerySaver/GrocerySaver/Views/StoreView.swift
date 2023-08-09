@@ -22,9 +22,9 @@ struct StoreView: View {
                             
                             Text("$\(item.price, specifier: "%.2f")")
                         }
-                    }   .onDelete(perform: vm.delete)
+                    }.onDelete(perform: vm.delete)
                 }
-            }   .listStyle(.insetGrouped)
+            }.listStyle(.insetGrouped)
                 .navigationTitle(vm.store.name)
                 .toolbar {
                     ToolbarItem {
@@ -55,7 +55,7 @@ struct StoreView: View {
                             TextField("Item Name", text: $vm.newItemName)
                                 .padding(.bottom)
                                 .textFieldStyle(.roundedBorder)
-                        }   .padding(.horizontal)
+                        }.padding(.horizontal)
                             .padding(.top)
                             
                         VStack(alignment: .leading) {
@@ -86,7 +86,7 @@ struct StoreView: View {
                             
                         Spacer()
                     }
-            }
+                }
         }
     }
 }

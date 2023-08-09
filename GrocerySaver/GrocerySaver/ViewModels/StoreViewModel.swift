@@ -21,7 +21,7 @@ class StoreViewModel: ObservableObject {
     }
     
     func addItem() {
-        if (newItemName == "") {
+        if newItemName == "" {
             newItemErrorMsg = "New Item must have a name"
             return
         }

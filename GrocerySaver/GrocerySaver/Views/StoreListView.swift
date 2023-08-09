@@ -32,52 +32,52 @@ struct StoreListView: View {
                         }.onDelete(perform: vm.delete)
                     }
                 }
-            } .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Text("Grocery Saver")
-                            .font(.largeTitle)
+            }.toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text("Grocery Saver")
+                        .font(.largeTitle)
+                        .bold()
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        vm.showingSheet = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
+            .sheet(isPresented: $vm.showingSheet) {
+                VStack {
+                    VStack(alignment: .leading) {
+                        Text("Add New Store")
+                            .padding(.top)
+                            .padding(.horizontal)
+                            .font(.title)
                             .bold()
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button{
-                            vm.showingSheet = true
-                        } label: {
-                            Image(systemName: "plus")
-                        }
-                    }
-                }
-                .sheet(isPresented: $vm.showingSheet) {
-                    VStack {
-                        VStack(alignment: .leading) {
-                            Text("Add New Store")
-                                .padding(.top)
-                                .padding(.horizontal)
-                                .font(.title)
-                                .bold()
                             
-                            TextField("Store Name", text: $vm.newStoreName)
-                                .textFieldStyle(.roundedBorder)
-                                .padding(.horizontal)
-                        }
-                        
-                        Text(vm.addStoreErrorMsg)
-                            .foregroundColor(.red)
-                        
-                        Button {
-                            vm.addStore()
-                        } label: {
-                            Text("Add Store")
-                                .font(.title3)
-                                .foregroundColor(.primary)
-                                .padding(.horizontal, 75)
-                                .padding(.vertical, 15)
-                        }   .background(.green)
-                            .cornerRadius(10)
-                            .padding(.top, 15)
-                        
-                        Spacer()
+                        TextField("Store Name", text: $vm.newStoreName)
+                            .textFieldStyle(.roundedBorder)
+                            .padding(.horizontal)
                     }
+                        
+                    Text(vm.addStoreErrorMsg)
+                        .foregroundColor(.red)
+                        
+                    Button {
+                        vm.addStore()
+                    } label: {
+                        Text("Add Store")
+                            .font(.title3)
+                            .foregroundColor(.primary)
+                            .padding(.horizontal, 75)
+                            .padding(.vertical, 15)
+                    }.background(.green)
+                        .cornerRadius(10)
+                        .padding(.top, 15)
+                        
+                    Spacer()
                 }
+            }
         }.navigationBarBackButtonHidden()
     }
 }

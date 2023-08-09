@@ -12,15 +12,6 @@ struct Item: Identifiable {
     let name: String
     let price: Double
     
-    func toDict() -> [String: Any] {
-        return ["name": self.name]
-    }
-    
-    init(name: String, price: Double) {
-        self.name = name
-        self.price = price
-    }
-    
     init?(_ dictionary: [String: Any]) {
         guard let name = dictionary["name"] as? String else {
             return nil
@@ -31,5 +22,14 @@ struct Item: Identifiable {
             return nil
         }
         self.price = Double(price) ?? 0.00
+    }
+    
+    func toDict() -> [String: Any] {
+        return ["name": self.name]
+    }
+    
+    init(name: String, price: Double) {
+        self.name = name
+        self.price = price
     }
 }

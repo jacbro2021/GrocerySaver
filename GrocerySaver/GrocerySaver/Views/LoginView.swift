@@ -10,7 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @ObservedObject private var _vm = LoginViewModel()
     @State private var _errorMsg = ""
-    
+
     var body: some View {
         NavigationStack {
             VStack {
@@ -32,21 +32,21 @@ struct LoginView: View {
                             .foregroundColor(.primary)
                             .padding(.horizontal, 75)
                             .padding(.vertical, 15)
-                    }   .background(.green)
+                    }.background(.green)
                         .cornerRadius(10)
                         .padding(.top, 15)
                 }
-                
+
                 NavigationLink {
                     RegisterView()
                 } label: {
                     Text("Sign Up")
                 }.padding(.top, 20)
-                
+
                 Spacer()
-                
+
                 NavigationLink(destination: StoreListView(), isActive: $_vm.isValid) {
-                                EmptyView()
+                    EmptyView()
                 }
             }.navigationTitle("Grocery Saver")
         }

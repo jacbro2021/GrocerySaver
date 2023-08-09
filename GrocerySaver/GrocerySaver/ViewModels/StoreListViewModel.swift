@@ -5,8 +5,8 @@
 //  Created by jacob brown on 8/6/23.
 //
 
-import Foundation
 import Firebase
+import Foundation
 
 class StoreListViewModel: ObservableObject {
     @Published public var stores: [Store]
@@ -16,16 +16,15 @@ class StoreListViewModel: ObservableObject {
     private var rootRef: DatabaseReference!
     
     init() {
-        //init stores array
+        // init stores array
         stores = []
         
-        //get firebase root and populate stores array
+        // get firebase root and populate stores array
         rootRef = Database.database().reference()
         populateShoppingLists()
-        
     }
     
-    //populate stores array with firebase data
+    // populate stores array with firebase data
     func populateShoppingLists() {
         rootRef.observe(.value) { snapshot in
             self.stores = []
@@ -49,11 +48,11 @@ class StoreListViewModel: ObservableObject {
         }
         let newStore = Store(name: newStoreName, items: [])
         
-        //add firebase code here
+        // add firebase code here
         let shoppingListRef = rootRef.child(newStoreName)
         shoppingListRef.setValue(newStore.toDict())
         
-        //append store to storelist in memory
+        // append store to storelist in memory
         showingSheet = false
         newStoreName = ""
     }
@@ -61,6 +60,6 @@ class StoreListViewModel: ObservableObject {
     func delete(at offsets: IndexSet) {
         stores.remove(atOffsets: offsets)
         
-        //add firebase code here
+        // add firebase code here
     }
 }

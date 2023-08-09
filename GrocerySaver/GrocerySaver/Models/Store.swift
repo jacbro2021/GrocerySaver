@@ -14,15 +14,6 @@ struct Store: Identifiable {
     let name: String
     var items: [Item] = []
     
-    //num of items
-    var itemCount: Int {
-        return self.items.count
-    }
-    
-    func toDict() -> [String: Any] {
-        return ["name": self.name]
-    }
-    
     init(name: String, items: [Item]) {
         self.name = name
         self.items = items
@@ -39,5 +30,15 @@ struct Store: Identifiable {
         if let dictionary = itemsDictionary {
             self.items = dictionary.compactMap(Item.init)
         }
+    }
+    
+    // num of items
+    var itemCount: Int {
+        return self.items.count
+    }
+    
+    //convert store to dictionary
+    func toDict() -> [String: Any] {
+        return ["name": self.name]
     }
 }
