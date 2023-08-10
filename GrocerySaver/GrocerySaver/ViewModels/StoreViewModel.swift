@@ -5,8 +5,8 @@
 //  Created by jacob brown on 8/6/23.
 //
 
-import Foundation
 import Firebase
+import Foundation
 
 class StoreViewModel: ObservableObject {
     @Published public var store: Store
@@ -20,11 +20,10 @@ class StoreViewModel: ObservableObject {
     
     init(_ store: Store) {
         self.store = store
-        self.items = store.items
+        items = store.items
         
-        //firebase
+        // firebase
         rootRef = Database.database().reference()
-        
     }
     
     func addItem() {
@@ -33,12 +32,12 @@ class StoreViewModel: ObservableObject {
             return
         }
         
-        //add item to array in memory
+        // add item to array in memory
         let newItem = Item(name: newItemName, price: Double(newItemPrice)!)
         store.items.append(newItem)
         items = store.items
         
-        //add item to firebase
+        // add item to firebase
         let shoppingListRef = rootRef.child(store.name)
         shoppingListRef.setValue(store.toDict())
         

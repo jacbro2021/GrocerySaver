@@ -25,7 +25,7 @@ struct Item: Identifiable {
     }
     
     func toDict() -> [String: Any] {
-        return ["name": self.name, "price": self.price]
+        return ["name": name, "price": price]
     }
     
     init(name: String, price: Double) {

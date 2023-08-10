@@ -36,10 +36,10 @@ struct Store: Identifiable {
         return self.items.count
     }
     
-    //convert store to dictionary
+    // convert store to dictionary
     func toDict() -> [String: Any] {
-        return ["name": self.name, "items": items.map({ item in
-            return item.toDict()
-        })]
+        return ["name": self.name, "items": self.items.map { item in
+            item.toDict()
+        }]
     }
 }
