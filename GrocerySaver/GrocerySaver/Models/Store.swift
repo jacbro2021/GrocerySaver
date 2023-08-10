@@ -26,9 +26,8 @@ struct Store: Identifiable {
         self.name = name
         
         let itemsDictionary = dictionary["items"] as? [JSONDictionary]
-        
-        if let dictionary = itemsDictionary {
-            self.items = dictionary.compactMap(Item.init)
+        if let itemsDict = itemsDictionary {
+            self.items = itemsDict.compactMap(Item.init)
         }
     }
     
@@ -39,6 +38,8 @@ struct Store: Identifiable {
     
     //convert store to dictionary
     func toDict() -> [String: Any] {
-        return ["name": self.name]
+        return ["name": self.name, "items": items.map({ item in
+            return item.toDict()
+        })]
     }
 }

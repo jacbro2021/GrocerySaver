@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 class StoreViewModel: ObservableObject {
     @Published public var store: Store
@@ -15,9 +16,15 @@ class StoreViewModel: ObservableObject {
     @Published public var newItemPrice = "0.00"
     @Published public var newItemErrorMsg = ""
     
+    private var rootRef: DatabaseReference!
+    
     init(_ store: Store) {
         self.store = store
         self.items = store.items
+        
+        //firebase
+        rootRef = Database.database().reference()
+        
     }
     
     func addItem() {
@@ -26,10 +33,15 @@ class StoreViewModel: ObservableObject {
             return
         }
         
-        let newPrice = Double(newItemPrice)!
-        
-        store.items.append(Item(name: newItemName, price: newPrice))
+        //add item to array in memory
+        let newItem = Item(name: newItemName, price: Double(newItemPrice)!)
+        store.items.append(newItem)
         items = store.items
+        
+        //add item to firebase
+        let shoppingListRef = rootRef.child(store.name)
+        shoppingListRef.setValue(store.toDict())
+        
         showingSheet = false
         newItemName = ""
         newItemPrice = "0.00"
