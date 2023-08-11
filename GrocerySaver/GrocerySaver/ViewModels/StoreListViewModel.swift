@@ -48,7 +48,6 @@ class StoreListViewModel: ObservableObject {
         }
         let newStore = Store(name: newStoreName, items: [])
         
-        // add firebase code here
         let shoppingListRef = rootRef.child(newStoreName)
         shoppingListRef.setValue(newStore.toDict())
         
@@ -58,8 +57,13 @@ class StoreListViewModel: ObservableObject {
     }
     
     func delete(at offsets: IndexSet) {
-        stores.remove(atOffsets: offsets)
+        //delete store from firebase
+        let removingIndex = offsets.first ?? 0
+        let removingStore = stores[removingIndex]
+        let storeRef = rootRef.child(removingStore.name)
+        storeRef.removeValue()
         
-        // add firebase code here
+        //delete store from stores array
+        stores.remove(atOffsets: offsets)
     }
 }

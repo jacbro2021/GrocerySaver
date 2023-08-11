@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseAuth
 
 class RegisterViewModel: ObservableObject {
     @Published var email = ""
@@ -13,12 +15,13 @@ class RegisterViewModel: ObservableObject {
     @Published var errorMsg = ""
     @Published var isValid = false
 
-    func validateNewProfile() {
+    func CreateProfile() {
         if email == "" || password == "" {
             errorMsg = "You must set a valid email and password to create a new profile."
             return
         }
-        //add firebase code here
+        
+        Auth.auth().createUser(withEmail: email, password: password)
         
         isValid = true
     }

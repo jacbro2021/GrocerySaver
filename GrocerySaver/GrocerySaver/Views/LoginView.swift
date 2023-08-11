@@ -16,6 +16,7 @@ struct LoginView: View {
             VStack {
                 Group {
                     TextField("Email", text: $_vm.email)
+                        .keyboardType(.emailAddress)
                         .textFieldStyle(.roundedBorder)
                         .padding(.horizontal, 15)
                     TextField("Password", text: $_vm.password)

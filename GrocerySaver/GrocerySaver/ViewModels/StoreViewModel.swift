@@ -48,7 +48,12 @@ class StoreViewModel: ObservableObject {
     }
     
     func delete(at offsets: IndexSet) {
+        //delete item from store in memory
         store.items.remove(atOffsets: offsets)
         items = store.items
+        
+        //update firebase to delete item
+        let shoppingListRef = rootRef.child(store.name)
+        shoppingListRef.setValue(store.toDict())
     }
 }

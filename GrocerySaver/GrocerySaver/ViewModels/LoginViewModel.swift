@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 class LoginViewModel: ObservableObject {
     @Published var email = ""
@@ -19,6 +20,7 @@ class LoginViewModel: ObservableObject {
             return
         }
         //add firebase code here
+        
         
         isValid = true
     }

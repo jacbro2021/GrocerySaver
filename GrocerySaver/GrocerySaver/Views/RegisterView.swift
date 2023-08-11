@@ -16,6 +16,7 @@ struct RegisterView: View {
             VStack {
                 Group {
                     TextField("Email", text: $_vm.email)
+                        .keyboardType(.emailAddress)
                         .textFieldStyle(.roundedBorder)
                         .padding(.horizontal, 15)
                     TextField("Password", text: $_vm.password)
@@ -25,7 +26,7 @@ struct RegisterView: View {
                     Text(_vm.errorMsg)
                         .foregroundColor(.red)
                     Button {
-                        _vm.validateNewProfile()
+                        _vm.CreateProfile()
                     } label: {
                         Text("Sign Up")
                             .font(.title3)
