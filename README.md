@@ -6,7 +6,7 @@
 |Store|Log-off||
 | ![Screenshot 2023-08-13 at 4 46 26 PM](https://github.com/jacbro2021/GrocerySaver/assets/97564414/a16f94ac-d4c1-4584-8925-77df28789c31) | ![Screenshot 2023-08-13 at 4 46 54 PM](https://github.com/jacbro2021/GrocerySaver/assets/97564414/73ead11d-4393-44a9-8fd0-f93279e26f4f) | |
 
-This application allows users to create an account / log in and create various grocery lists, each corresponding to a particular store. The application uses firebase authentication as well as firebase realtime data base to save user data and allow that data to persist throughout multiple devices and sessions. A full walkthrough of the application can be found below.
+This application allows users to create an account / log in and create various grocery lists, each corresponding to a particular store. The application uses firebase authentication as well as firebase realtime data base to save user data and allow that data to persist throughout multiple devices and sessions. A full walkthrough video of the application can be found below.
 
 <div align="center">
 https://github.com/jacbro2021/GrocerySaver/assets/97564414/1aad750f-c0ce-44dc-ab95-382663206cd3
