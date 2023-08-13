@@ -19,7 +19,7 @@ struct RegisterView: View {
                         .keyboardType(.emailAddress)
                         .textFieldStyle(.roundedBorder)
                         .padding(.horizontal, 15)
-                    TextField("Password", text: $_vm.password)
+                    SecureField("Password", text: $_vm.password)
                         .textFieldStyle(.roundedBorder)
                         .padding(.horizontal, 15)
                         .padding(.top, 15)
