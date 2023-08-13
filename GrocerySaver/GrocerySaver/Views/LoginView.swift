@@ -49,7 +49,7 @@ struct LoginView: View {
                 NavigationLink(destination: StoreListView(vm: StoreListViewModel()), isActive: $_vm.isValid) {
                     EmptyView()
                 }
-            }   .navigationTitle("Grocery Saver")
+            }.navigationTitle("Grocery Saver")
                 .navigationBarBackButtonHidden()
         }
     }

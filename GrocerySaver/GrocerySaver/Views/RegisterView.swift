@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct RegisterView: View {
-    
     @ObservedObject private var _vm = RegisterViewModel()
-    
+
     var body: some View {
         NavigationStack {
             VStack {
@@ -33,16 +32,16 @@ struct RegisterView: View {
                             .foregroundColor(.primary)
                             .padding(.horizontal, 75)
                             .padding(.vertical, 15)
-                    }   .background(.green)
+                    }.background(.green)
                         .cornerRadius(10)
                         .padding(.top, 15)
                 }
-                
+
                 Spacer()
             }.navigationTitle("Create New User")
-            
+
             NavigationLink(destination: StoreListView(vm: StoreListViewModel()), isActive: $_vm.isValid) {
-                            EmptyView()
+                EmptyView()
             }
         }
     }

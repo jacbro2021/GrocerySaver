@@ -8,6 +8,7 @@
 import Firebase
 import Foundation
 
+// view model for the StoreView
 class StoreViewModel: ObservableObject {
     @Published public var store: Store
     @Published public var items: [Item]
@@ -31,6 +32,7 @@ class StoreViewModel: ObservableObject {
         rootRef = Database.database().reference()
     }
     
+    // adds an item to the store
     func addItem() {
         if newItemName == "" {
             newItemErrorMsg = "New Item must have a name"
@@ -52,12 +54,13 @@ class StoreViewModel: ObservableObject {
         newItemErrorMsg = ""
     }
     
+    // deletes an item from the store
     func delete(at offsets: IndexSet) {
-        //delete item from store in memory
+        // delete item from store in memory
         store.items.remove(atOffsets: offsets)
         items = store.items
         
-        //update firebase to delete item
+        // update firebase to delete item
         let shoppingListRef = rootRef.child(user!.emailWithoutSpecialCharacters).child(store.name)
         shoppingListRef.setValue(store.toDict())
     }

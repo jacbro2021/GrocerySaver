@@ -8,6 +8,7 @@
 import Firebase
 import Foundation
 
+// view model for the StoreListView
 class StoreListViewModel: ObservableObject {
     @Published public var stores: [Store]
     @Published public var showingAddStoreSheet = false
@@ -26,7 +27,7 @@ class StoreListViewModel: ObservableObject {
         // get firebase root and populate stores array
         user = Auth.auth().currentUser
         rootRef = Database.database().reference()
-        if (user == nil) {
+        if user == nil {
             return
         }
         populateShoppingLists()
@@ -49,6 +50,7 @@ class StoreListViewModel: ObservableObject {
         }
     }
 
+    // adds a store to the users storelist view and updates firebase
     func addStore() {
         if newStoreName == "" {
             addStoreErrorMsg = "Enter name to add new store"
@@ -56,8 +58,8 @@ class StoreListViewModel: ObservableObject {
         }
         let newStore = Store(name: newStoreName, items: [])
         
+        // update firebase
         let userRef = rootRef.child(user!.emailWithoutSpecialCharacters)
-        
         let shoppingListRef = userRef.child(newStoreName)
         shoppingListRef.setValue(newStore.toDict())
         
@@ -66,6 +68,7 @@ class StoreListViewModel: ObservableObject {
         newStoreName = ""
     }
     
+    // deletes a store from the StoreView and from the firebase db
     func delete(at offsets: IndexSet) {
         // delete store from firebase
         let removingIndex = offsets.first ?? 0
@@ -77,6 +80,7 @@ class StoreListViewModel: ObservableObject {
         stores.remove(atOffsets: offsets)
     }
     
+    // signs the currently signed in user out
     func signOut() -> Bool {
         do {
             try Auth.auth().signOut()

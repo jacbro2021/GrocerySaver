@@ -68,7 +68,7 @@ struct StoreListView: View {
         }.navigationBarBackButtonHidden()
     }
     
-    var addStoreSheet: some View {
+    private var addStoreSheet: some View {
         VStack {
             VStack(alignment: .leading) {
                 Text("Add New Store")
@@ -101,7 +101,7 @@ struct StoreListView: View {
         }
     }
     
-    var settingsSheet: some View {
+    private var settingsSheet: some View {
         VStack {
             HStack {
                 Text("Settings")
@@ -120,20 +120,18 @@ struct StoreListView: View {
                     vm.showingSettingsSheet = false
                 }
             } label: {
-                    Text("Sign Out")
-                        .font(.title3)
-                        .foregroundColor(.primary)
-                        .padding(.horizontal, 75)
-                        .padding(.vertical, 15)
-            }   .background(.green)
+                Text("Sign Out")
+                    .font(.title3)
+                    .foregroundColor(.primary)
+                    .padding(.horizontal, 75)
+                    .padding(.vertical, 15)
+            }.background(.green)
                 .cornerRadius(10)
                 .padding(.top, 15)
                 
             Spacer()
         }
     }
-    
-    
 }
 
 struct ListView_Previews: PreviewProvider {
