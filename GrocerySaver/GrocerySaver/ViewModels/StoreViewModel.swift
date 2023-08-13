@@ -17,13 +17,17 @@ class StoreViewModel: ObservableObject {
     @Published public var newItemErrorMsg = ""
     
     private var rootRef: DatabaseReference!
-    private let user = Auth.auth().currentUser!
+    private let user: User?
     
     init(_ store: Store) {
         self.store = store
         items = store.items
         
         // firebase
+        user = Auth.auth().currentUser
+        if user == nil {
+            return
+        }
         rootRef = Database.database().reference()
     }
     
@@ -39,7 +43,7 @@ class StoreViewModel: ObservableObject {
         items = store.items
         
         // add item to firebase
-        let shoppingListRef = rootRef.child(user.emailWithoutSpecialCharacters).child(store.name)
+        let shoppingListRef = rootRef.child(user!.emailWithoutSpecialCharacters).child(store.name)
         shoppingListRef.setValue(store.toDict())
         
         showingSheet = false
@@ -54,7 +58,7 @@ class StoreViewModel: ObservableObject {
         items = store.items
         
         //update firebase to delete item
-        let shoppingListRef = rootRef.child(user.emailWithoutSpecialCharacters).child(store.name)
+        let shoppingListRef = rootRef.child(user!.emailWithoutSpecialCharacters).child(store.name)
         shoppingListRef.setValue(store.toDict())
     }
 }

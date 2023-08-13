@@ -41,7 +41,7 @@ struct RegisterView: View {
                 Spacer()
             }.navigationTitle("Create New User")
             
-            NavigationLink(destination: StoreListView(), isActive: $_vm.isValid) {
+            NavigationLink(destination: StoreListView(vm: StoreListViewModel()), isActive: $_vm.isValid) {
                             EmptyView()
             }
         }

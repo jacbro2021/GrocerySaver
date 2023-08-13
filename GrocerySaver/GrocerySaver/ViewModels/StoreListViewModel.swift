@@ -9,27 +9,32 @@ import Firebase
 import Foundation
 
 class StoreListViewModel: ObservableObject {
-    
     @Published public var stores: [Store]
-    @Published public var showingSheet = false
+    @Published public var showingAddStoreSheet = false
+    @Published public var showingSettingsSheet = false
+    @Published public var loggedOff = false
     @Published public var newStoreName = ""
     @Published public var addStoreErrorMsg = ""
     
     private var rootRef: DatabaseReference!
-    private let user: User = Auth.auth().currentUser!
+    private let user: User?
     
     init() {
         // init stores array
         stores = []
         
         // get firebase root and populate stores array
+        user = Auth.auth().currentUser
         rootRef = Database.database().reference()
+        if (user == nil) {
+            return
+        }
         populateShoppingLists()
     }
     
     // populate stores array with firebase data
     func populateShoppingLists() {
-        rootRef.child(user.emailWithoutSpecialCharacters).observe(.value) { snapshot in
+        rootRef.child(user!.emailWithoutSpecialCharacters).observe(.value) { snapshot in
             self.stores = []
             
             let shoppingListDict = snapshot.value as? [String: Any] ?? [:]
@@ -51,24 +56,33 @@ class StoreListViewModel: ObservableObject {
         }
         let newStore = Store(name: newStoreName, items: [])
         
-        let userRef = rootRef.child(user.emailWithoutSpecialCharacters)
+        let userRef = rootRef.child(user!.emailWithoutSpecialCharacters)
         
         let shoppingListRef = userRef.child(newStoreName)
         shoppingListRef.setValue(newStore.toDict())
         
         // append store to storelist in memory
-        showingSheet = false
+        showingAddStoreSheet = false
         newStoreName = ""
     }
     
     func delete(at offsets: IndexSet) {
-        //delete store from firebase
+        // delete store from firebase
         let removingIndex = offsets.first ?? 0
         let removingStore = stores[removingIndex]
-        let storeRef = rootRef.child(user.emailWithoutSpecialCharacters).child(removingStore.name)
+        let storeRef = rootRef.child(user!.emailWithoutSpecialCharacters).child(removingStore.name)
         storeRef.removeValue()
         
-        //delete store from stores array
+        // delete store from stores array
         stores.remove(atOffsets: offsets)
+    }
+    
+    func signOut() -> Bool {
+        do {
+            try Auth.auth().signOut()
+            return true
+        } catch {
+            return false
+        }
     }
 }
