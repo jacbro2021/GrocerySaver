@@ -32,7 +32,7 @@ struct StoreView: View {
                             vm.showingSheet = true
                         } label: {
                             Image(systemName: "plus")
-                        }
+                        }.foregroundColor(.green)
                     }
                 }
                 .sheet(isPresented: $vm.showingSheet) {
@@ -64,7 +64,7 @@ struct StoreView: View {
                                 .foregroundColor(.gray)
                                 .bold()
                             TextField("Item Price", text: $vm.newItemPrice)
-                                .keyboardType(.numberPad)
+                                .keyboardType(.decimalPad)
                                 .padding(.bottom)
                                 .textFieldStyle(.roundedBorder)
                         }.padding(.horizontal)
