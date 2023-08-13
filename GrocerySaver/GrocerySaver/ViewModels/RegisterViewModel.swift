@@ -5,9 +5,9 @@
 //  Created by jacob brown on 7/25/23.
 //
 
-import Foundation
 import Firebase
 import FirebaseAuth
+import Foundation
 
 class RegisterViewModel: ObservableObject {
     @Published var email = ""
@@ -20,9 +20,15 @@ class RegisterViewModel: ObservableObject {
             errorMsg = "You must set a valid email and password to create a new profile."
             return
         }
-        
-        Auth.auth().createUser(withEmail: email, password: password)
-        
-        isValid = true
+
+        //create new user in firebase
+        Auth.auth().createUser(withEmail: email, password: password) { _, error in
+            if let err = error {
+                self.errorMsg = err.localizedDescription
+                return
+            } else {
+                self.isValid = true
+            }
+        }
     }
 }
