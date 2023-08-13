@@ -9,11 +9,14 @@ import Firebase
 import Foundation
 
 class StoreListViewModel: ObservableObject {
+    
     @Published public var stores: [Store]
     @Published public var showingSheet = false
     @Published public var newStoreName = ""
     @Published public var addStoreErrorMsg = ""
+    
     private var rootRef: DatabaseReference!
+    private let user: User = Auth.auth().currentUser!
     
     init() {
         // init stores array
@@ -26,7 +29,7 @@ class StoreListViewModel: ObservableObject {
     
     // populate stores array with firebase data
     func populateShoppingLists() {
-        rootRef.observe(.value) { snapshot in
+        rootRef.child(user.emailWithoutSpecialCharacters).observe(.value) { snapshot in
             self.stores = []
             
             let shoppingListDict = snapshot.value as? [String: Any] ?? [:]
@@ -48,7 +51,9 @@ class StoreListViewModel: ObservableObject {
         }
         let newStore = Store(name: newStoreName, items: [])
         
-        let shoppingListRef = rootRef.child(newStoreName)
+        let userRef = rootRef.child(user.emailWithoutSpecialCharacters)
+        
+        let shoppingListRef = userRef.child(newStoreName)
         shoppingListRef.setValue(newStore.toDict())
         
         // append store to storelist in memory
@@ -60,7 +65,7 @@ class StoreListViewModel: ObservableObject {
         //delete store from firebase
         let removingIndex = offsets.first ?? 0
         let removingStore = stores[removingIndex]
-        let storeRef = rootRef.child(removingStore.name)
+        let storeRef = rootRef.child(user.emailWithoutSpecialCharacters).child(removingStore.name)
         storeRef.removeValue()
         
         //delete store from stores array

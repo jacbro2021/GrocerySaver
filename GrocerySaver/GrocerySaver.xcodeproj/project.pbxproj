@@ -13,6 +13,7 @@
 		489759432A8078E4007C4C99 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489759422A8078E4007C4C99 /* Store.swift */; };
 		489759452A808B05007C4C99 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489759442A808B05007C4C99 /* StoreView.swift */; };
 		489759472A808B0F007C4C99 /* StoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489759462A808B0F007C4C99 /* StoreViewModel.swift */; };
+		489759492A895A2A007C4C99 /* UserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489759482A895A2A007C4C99 /* UserExtension.swift */; };
 		48C613842A64997A00C5BE15 /* GrocerySaverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C613832A64997A00C5BE15 /* GrocerySaverApp.swift */; };
 		48C613882A64997B00C5BE15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48C613872A64997B00C5BE15 /* Assets.xcassets */; };
 		48C6138B2A64997B00C5BE15 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48C6138A2A64997B00C5BE15 /* Preview Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		489759422A8078E4007C4C99 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		489759442A808B05007C4C99 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		489759462A808B0F007C4C99 /* StoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewModel.swift; sourceTree = "<group>"; };
+		489759482A895A2A007C4C99 /* UserExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExtension.swift; sourceTree = "<group>"; };
 		48C613802A64997A00C5BE15 /* GrocerySaver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrocerySaver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C613832A64997A00C5BE15 /* GrocerySaverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrocerySaverApp.swift; sourceTree = "<group>"; };
 		48C613872A64997B00C5BE15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4897594C2A895FEB007C4C99 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				489759482A895A2A007C4C99 /* UserExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		48C613772A64997A00C5BE15 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				48C613832A64997A00C5BE15 /* GrocerySaverApp.swift */,
+				4897594C2A895FEB007C4C99 /* Extensions */,
 				48C613A42A649A4700C5BE15 /* Models */,
 				48C613A32A649A4000C5BE15 /* ViewModels */,
 				48C613A22A649A3900C5BE15 /* Views */,
@@ -224,6 +235,7 @@
 				489759432A8078E4007C4C99 /* Store.swift in Sources */,
 				4897593D2A807799007C4C99 /* StoreListView.swift in Sources */,
 				489759412A8078A1007C4C99 /* Item.swift in Sources */,
+				489759492A895A2A007C4C99 /* UserExtension.swift in Sources */,
 				48C613A62A649B1F00C5BE15 /* LoginView.swift in Sources */,
 				48C613AC2A64A06500C5BE15 /* RegisterView.swift in Sources */,
 				489759452A808B05007C4C99 /* StoreView.swift in Sources */,
